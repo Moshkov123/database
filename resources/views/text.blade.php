@@ -19,13 +19,31 @@
       <x-header/>
     <main class="max-w-7xl mx-auto p-8">
      <p>{{ $texts }}</p>
+
  @foreach ($texts as $text)
     <h1> {{ $text->id }}</h1>
  <h2> {{ $text->heading }}</h2>
     <p>{{ $text->text }}</p>
- 
-  
+     <p>{{ $text->categorie_id }}</p>
+
 @endforeach
+
+    <form method="POST" action="/index">
+    @csrf
+    <div class="mb-3">
+        <label for="heading" class="form-label">Заголовок</label>
+        <input type="text" name="heading" class="form-control" id="heading">
+    </div>
+    <div class="mb-3">
+        <label for="text" class="form-label">Текст</label>
+        <textarea name="text" class="form-control" id="text"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="categorie_id" class="form-label">categorie id</label>
+        <textarea name="text" class="form-control" id="categorie_id"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
 </main>
 <x-footer/>
     </body>

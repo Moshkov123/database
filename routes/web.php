@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 
  Route::get('/index', [TextController::class, 'index'])->name('index');
+Route::post('/index', [TextController::class, 'add']);
