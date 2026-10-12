@@ -20,6 +20,7 @@ class TextController extends Controller
             'heading' => 'required|string|max:25',
             'text'    => 'required|string',
             'categorie_id'    => 'required',
+             'user_id'    => 'required',
         ]);
 
         Text::create($validated);

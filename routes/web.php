@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/index', [TextController::class, 'index'])->name('index');
 
-
- Route::get('/index', [TextController::class, 'index'])->name('index');
 Route::post('/index', [TextController::class, 'add']);
+

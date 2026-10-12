@@ -24,7 +24,8 @@
     <h1> {{ $text->id }}</h1>
  <h2> {{ $text->heading }}</h2>
     <p>{{ $text->text }}</p>
-     <p>{{ $text->categorie_id }}</p>
+     <p>categorie_id === {{ $text->categorie_id }}</p>
+       <p>user_id == {{ $text->user_id }}</p>
 
 @endforeach
 
@@ -32,7 +33,7 @@
     @csrf
     <div class="mb-3">
         <label for="heading" class="form-label">Заголовок</label>
-        <input type="text" name="heading" class="form-control" id="heading">
+        <input name="heading" type="text"  class="form-control" id="heading">
     </div>
     <div class="mb-3">
         <label for="text" class="form-label">Текст</label>
@@ -40,7 +41,11 @@
     </div>
     <div class="mb-3">
         <label for="categorie_id" class="form-label">categorie id</label>
-        <textarea name="text" class="form-control" id="categorie_id"></textarea>
+        <textarea name="categorie_id" class="form-control" id="categorie_id"></textarea>
+    </div>
+       <div class="mb-3">
+        <label for="user_id" class="form-label">user id</label>
+        <textarea name="user_id" class="form-control" id="user_id"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Отправить</button>
 </form>
